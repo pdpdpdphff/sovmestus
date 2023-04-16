@@ -1,0 +1,81 @@
+{% extends 'general.html' %}
+
+{% block content %}
+{{ super() }}
+
+<div class="container">
+    <div class="content">
+        <form action="/" method="POST">
+            <div class="box">
+                <div class="item">
+                    <h3>Ваши данные</h3>
+
+                    <p>Имя</p>
+                    <input type="text" name="name_1" maxlength="16" required>
+
+                    <p>Дата рождения</p>
+                    <input type="date" name="born_1" required>
+
+                    <p>Знак зодиака</p>
+                    <select name="zodiac_1" required>
+                        <option value="0">Овен</option>
+                        <option value="1">Телец</option>
+                        <option value="2">Близнецы</option>
+                        <option value="3">Рак</option>
+                        <option value="4">Лев</option>
+                        <option value="5">Дева</option>
+                        <option value="6">Весы</option>
+                        <option value="7">Скорпион</option>
+                        <option value="8">Стрелец</option>
+                        <option value="9">Козерог</option>
+                        <option value="10">Водолей</option>
+                        <option value="11">Рыбы</option>
+                    </select>
+                </div>
+
+                <div class="item">
+                    <h3>Данные о партнёре</h3>
+
+                    <p>Имя</p>
+                    <input type="text" name="name_2" maxlength="16" required>
+
+                    <p>Дата рождения</p>
+                    <input type="date" name="born_2" required>
+
+                    <p>Знак зодиака</p>
+                    <select name="zodiac_2" required>
+                        <option value="0">Овен</option>
+                        <option value="1">Телец</option>
+                        <option value="2">Близнецы</option>
+                        <option value="3">Рак</option>
+                        <option value="4">Лев</option>
+                        <option value="5">Дева</option>
+                        <option value="6">Весы</option>
+                        <option value="7">Скорпион</option>
+                        <option value="8">Стрелец</option>
+                        <option value="9">Козерог</option>
+                        <option value="10">Водолей</option>
+                        <option value="11">Рыбы</option>
+                    </select>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="bbox" style="width: 100%; text-align: center;">
+
+                {% for msg in get_flashed_messages() %}
+                {% if msg %}
+                    <p>{{ msg }}</p>
+                {% endif %}
+                {% endfor %}
+                <input type="submit" class="sss" value="Проверить" name="get_result">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="../static/js/index.js"></script>
+
+{% endblock %}
