@@ -1,5 +1,5 @@
-from flask import Flask
 import time
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -15,6 +15,7 @@ db = SQLAlchemy(app)
 
 class Result(db.Model):
     __tablename__ = 'results'
+    
     id = db.Column(db.Integer, primary_key=True)
     born_1 = db.Column(db.String(16), nullable=False)
     born_2 = db.Column(db.String(16), nullable=False)
@@ -24,6 +25,3 @@ class Result(db.Model):
     zodiac_2 = db.Column(db.Integer, nullable=False)
     percent = db.Column(db.Integer, nullable=False, default=0)
     creation_date = db.Column(db.Integer, default=int(time.time()))
-
-    def __repr__(self):
-        return f'<result {self.id}>'

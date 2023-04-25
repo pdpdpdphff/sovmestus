@@ -1,14 +1,13 @@
 import random
 from app import app, db, Result
-from flask import Flask, render_template, url_for, request, flash, redirect
+from flask import render_template, redirect, flash, request
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    context = {}
-
     if request.method == 'POST':
         form = request.form
+
         if 'get_result' in form:
             result = Result.query.filter_by(
                 born_1=form['born_1'],
@@ -18,6 +17,7 @@ def index():
                 zodiac_1=form['zodiac_1'],
                 zodiac_2=form['zodiac_2']
             ).first()
+
             if not result:
                 result = Result(
                     born_1=form['born_1'],
@@ -28,14 +28,16 @@ def index():
                     zodiac_2=form['zodiac_2'],
                     percent=random.randint(0, 100)
                 )
+
                 db.session.add(result)
                 db.session.commit()
             
                 flash(f'Совместимость: {result.percent}%')
-                return redirect(url_for('index'))
+
+                return redirect('/')
 
             db.session.commit()
             
         flash(f'Совместимость: {result.percent}%')
 
-    return render_template('index.html', context=context)
+    return render_template('index.html')

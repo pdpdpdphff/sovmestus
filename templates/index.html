@@ -1,81 +1,87 @@
-{% extends 'general.html' %}
+<!DOCTYPE html>
+<html lang="ru">
 
-{% block content %}
-{{ super() }}
+<head>
+    <title>Sovmestus</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="static/css/general.css">
+    <!-- Подключение шрифта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
 
-<div class="container">
-    <div class="content">
-        <form action="/" method="POST">
-            <div class="box">
-                <div class="item">
-                    <h3>Ваши данные</h3>
+<body>
+    <div class="container">
+        <div class="content">
+            <form action="/" method="POST">
+                <h3>Ваши данные</h3>
 
-                    <p>Имя</p>
-                    <input type="text" name="name_1" maxlength="16" required>
+                <p>Имя</p>
+                <input type="text" name="name_1" maxlength="16" placeholder="Ваше имя" required>
 
-                    <p>Дата рождения</p>
-                    <input type="date" name="born_1" required>
+                <p>Дата рождения</p>
+                <input type="date" name="born_1" required>
 
-                    <p>Знак зодиака</p>
-                    <select name="zodiac_1" required>
-                        <option value="0">Овен</option>
-                        <option value="1">Телец</option>
-                        <option value="2">Близнецы</option>
-                        <option value="3">Рак</option>
-                        <option value="4">Лев</option>
-                        <option value="5">Дева</option>
-                        <option value="6">Весы</option>
-                        <option value="7">Скорпион</option>
-                        <option value="8">Стрелец</option>
-                        <option value="9">Козерог</option>
-                        <option value="10">Водолей</option>
-                        <option value="11">Рыбы</option>
-                    </select>
-                </div>
+                <p>Знак зодиака</p>
+                <select name="zodiac_1" required>
+                    <option value="0">Овен</option>
+                    <option value="1">Телец</option>
+                    <option value="2">Близнецы</option>
+                    <option value="3">Рак</option>
+                    <option value="4">Лев</option>
+                    <option value="5">Дева</option>
+                    <option value="6">Весы</option>
+                    <option value="7">Скорпион</option>
+                    <option value="8">Стрелец</option>
+                    <option value="9">Козерог</option>
+                    <option value="10">Водолей</option>
+                    <option value="11">Рыбы</option>
+                </select>
 
-                <div class="item">
-                    <h3>Данные о партнёре</h3>
+                <br><br>
 
-                    <p>Имя</p>
-                    <input type="text" name="name_2" maxlength="16" required>
+                <h3>Данные о партнёре</h3>
 
-                    <p>Дата рождения</p>
-                    <input type="date" name="born_2" required>
+                <p>Имя</p>
+                <input type="text" name="name_2" maxlength="16" placeholder="Имя партнёра" required>
 
-                    <p>Знак зодиака</p>
-                    <select name="zodiac_2" required>
-                        <option value="0">Овен</option>
-                        <option value="1">Телец</option>
-                        <option value="2">Близнецы</option>
-                        <option value="3">Рак</option>
-                        <option value="4">Лев</option>
-                        <option value="5">Дева</option>
-                        <option value="6">Весы</option>
-                        <option value="7">Скорпион</option>
-                        <option value="8">Стрелец</option>
-                        <option value="9">Козерог</option>
-                        <option value="10">Водолей</option>
-                        <option value="11">Рыбы</option>
-                    </select>
-                </div>
-            </div>
+                <p>Дата рождения</p>
+                <input type="date" name="born_2" required>
 
-            <br>
-            <br>
+                <p>Знак зодиака</p>
+                <select name="zodiac_2" required>
+                    <option value="0">Овен</option>
+                    <option value="1">Телец</option>
+                    <option value="2">Близнецы</option>
+                    <option value="3">Рак</option>
+                    <option value="4">Лев</option>
+                    <option value="5">Дева</option>
+                    <option value="6">Весы</option>
+                    <option value="7">Скорпион</option>
+                    <option value="8">Стрелец</option>
+                    <option value="9">Козерог</option>
+                    <option value="10">Водолей</option>
+                    <option value="11">Рыбы</option>
+                </select>
 
-            <div class="bbox" style="width: 100%; text-align: center;">
+                <br><br><br><br> <!-- Отступы -->
 
-                {% for msg in get_flashed_messages() %}
-                {% if msg %}
+                <div class="bbox" style="width: 100%; text-align: center;">
+
+                    <!-- {% for msg in get_flashed_messages() %}
+                    {% if msg %}
                     <p>{{ msg }}</p>
-                {% endif %}
-                {% endfor %}
-                <input type="submit" class="sss" value="Проверить" name="get_result">
-            </div>
-        </form>
+                    {% endif %}
+                    {% endfor %} -->
+
+                    <input type="submit" class="sss" value="Проверить" name="get_result">
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+</body>
 
-<script src="../static/js/index.js"></script>
-
-{% endblock %}
+</html>

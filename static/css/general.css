@@ -1,9 +1,6 @@
 * {
     box-sizing: border-box;
-}
-
-body {
-    background-color: #35363A;
+    font-family: 'Montserrat';
 }
 
 
@@ -25,27 +22,30 @@ body {
     min-width: 400px;
 }
 
-.item {
-    display: inline-block;
-    width: 100%;
-}
 
 h3 {
     text-align: center;
 }
 
+
 .sss {
     border: none;
-    border-radius: 100px;
+    border-radius: 5px;
     background-color: #6482F9;
     padding: 15px 45px;
     color: #fff;
     font-weight: 600;
 }
 
+
 input, select {
     width: 100%;
-    min-height: 35px;
+    min-height: 45px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: hsla(228, 93%, 68%, 0.2) 10px 5px 15px;
+    padding: 5px 10px;
+    outline: none;
 }
 
 
